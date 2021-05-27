@@ -1,0 +1,18 @@
+import cv2
+import numpy as np
+img1 = np.zeros((225, 225, 3), np.uint8)
+img1 = cv2.rectangle(img1,(100, 0), (250, 100), (255, 255, 255), -1)
+img = cv2.imread('lena.jpg')
+# bitAnd = cv2.bitwise_and(img, img1)
+# bitor = cv2.bitwise_or(img, img1)
+# bitxor = cv2.bitwise_xor(img, img1)
+bitnot = cv2.bitwise_not(img)
+print(img.shape)
+cv2.imshow("img1", img1)
+cv2.imshow("img", img)
+# cv2.imshow('and', bitAnd)
+# cv2.imshow('and', bitor)
+# cv2.imshow('and', bitxor)
+cv2.imshow('not', bitnot)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
